@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EntradasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/entradas', [EntradasController::class, 'index'])->name('entradas');
+
+Route::post('/entradas', [EntradasController::class, 'store'])->name('entradas');
+
+Route::get('/entradas/{$id}', [EntradasController::class, 'show'])->name('entradas-edit');
+
+Route::patch('/entradas/{$id}', [EntradasController::class, 'update'])->name('entradas-update');
+
+Route::delete('/entradas/{$id}', [EntradasController::class, 'destroy'])->name('entradas-destroy');
+
+
+
