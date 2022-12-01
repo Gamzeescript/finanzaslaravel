@@ -20,50 +20,50 @@ class EntradasController extends Controller
 
         ]);
 
-        $entrega = new Entrega;
-        $entrega->idUsuario = $request->idUsuario;
-        $entrega->fechaEntrada = $request->fechaEntrada;
-        $entrega->fechaRegistro = $request->fechaRegistro;
-        $entrega->factura = $request-> factura;
-        $entrega->save();
+        $entrada = new Entradas;
+        $entrada->idUsuario = $request->idUsuario;
+        $entrada->fechaEntrada = $request->fechaEntrada;
+        $entrada->fechaRegistro = $request->fechaRegistro;
+        $entrada->factura = $request-> factura;
+        $entrada->save();
 
         return redirect()->route('entrada')->with('success', 'Entrada agregada correctamente');
     }
 
     public function index(){
 
-        $entrega = Entrega::all();
+        $entrada = Entradas::all();
 
-        return view('entregas.index', ['entregas' => $entrega]);
+        return view('entrada.index', ['entrada' => $entrada]);
 
     }
 
     public function show($id){
 
-        $entrega = Entrega::find($id);
+        $entrada = Entradas::find($id);
 
-        return view('entregas.show', ['entregas' => $entrega]);
+        return view('entrada.show', ['entrada' => $entrada]);
 
     }
 
     public function update(Request $request, $id){
 
-        $entrega = Entrega::find($id);
-        $entrega->idUsuario = $request->idUsuario;
-        $entrega->fechaEntrada = $request->fechaEntrada;
-        $entrega->fechaRegistro = $request->fechaRegistro;
-        $entrega->factura = $request-> factura;
-        $entrega->save();
+        $entrada = Entradas::find($id);
+        $entrada->idUsuario = $request->idUsuario;
+        $entrada->fechaEntrada = $request->fechaEntrada;
+        $entrada->fechaRegistro = $request->fechaRegistro;
+        $entrada->factura = $request-> factura;
+        $entrada->save();
 
-        return view('entregas.index', ['success' => 'actualizado exitosamente']);
+        return view('entrada.index', ['success' => 'actualizado exitosamente']);
 
     }
 
     public function destroy($id){
 
-        $entrega = Entrega::all($id);
+        $entrada = Entradas::all($id);
 
-        return view('entregas.index', ['success' => 'registro eliminado exitosamente']);
+        return view('entrada.index', ['success' => 'registro eliminado exitosamente']);
 
     }
 
