@@ -26,6 +26,8 @@ class EntradasDetallesController extends Controller
     }
 
     public function findByDate(){
+
+        return \DB::table('empleados')->select('idRol')->where('idEmpleado', '=', $id)->get();
     
     }    
 
