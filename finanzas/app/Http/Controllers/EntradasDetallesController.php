@@ -13,7 +13,7 @@ class EntradasDetallesController extends Controller
 
         $entrada = Entradas::all();
 
-        return view('entrada.index', ['entrada' => $entrada]);
+        return view('entradaDetalle.index', ['entrada' => $entrada]);
 
     }
 
@@ -21,20 +21,7 @@ class EntradasDetallesController extends Controller
 
         $entrada = Entradas::find($id);
 
-        return view('entrada.show', ['entrada' => $entrada]);
-
-    }
-
-    public function update(Request $request, $id){
-
-        $entrada = Entradas::find($id);
-        $entrada->idUsuario = $request->idUsuario;
-        $entrada->fechaEntrada = $request->fechaEntrada;
-        $entrada->fechaRegistro = $request->fechaRegistro;
-        $entrada->factura = $request-> factura;
-        $entrada->save();
-
-        return view('entrada.index', ['success' => 'actualizado exitosamente']);
+        return view('entradaDetalle.show', ['entrada' => $entrada]);
 
     }
 
