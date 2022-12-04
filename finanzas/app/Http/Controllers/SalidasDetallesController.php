@@ -24,4 +24,8 @@ class SalidasDetallesController extends Controller
 
     }
 
+    public function findByDate(){
+    
+    }
+
 }

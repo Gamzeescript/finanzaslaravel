@@ -25,4 +25,8 @@ class EntradasDetallesController extends Controller
 
     }
 
+    public function findByDate(){
+    
+    }    
+
 }
